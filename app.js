@@ -32,13 +32,11 @@ document.getElementById('go').addEventListener('click', (e) => {
     possible = words;
 
     for (let i = 0; i < boxArray.length; i++) {
-       
+       console.log(`testing box ${i}`)
         if (boxArray[i].classList.contains('valid')) {
-            for (let j = 0; j < possible.length; j++) {
-                if (possible[j][i] !== boxArray[i].value) {
-                    possible.splice(j,1);
-                }
-            }
+            console.log(`this box is valid`);
+            let letter = boxArray[i].value.toLowerCase();
+            possible = possible.filter(word => letter === word[i])
         } 
     }
     for (let i = 0; i < boxArray.length; i++) {
