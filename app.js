@@ -41,18 +41,35 @@ document.getElementById('go').addEventListener('click', (e) => {
     }
     for (let i = 0; i < boxArray.length; i++) {
        
-        if (boxArray[i].classList.contains('invalid') && possible.length > 0) {
-            for (let j = 0; j < possible.length; j++) {
-                if (contains(possible[j], boxArray[i].value)) {
-                    possible.splice([j],1);
+        if (boxArray[i].classList.contains('invalid')) {
+            let letter = boxArray[i].value.toLowerCase();
+            console.log(`${i} is invalid`)
+            for (let j = 0; j < possible.length; j++){
+                if (contains(possible[j], letter)) {
+                    possible.splice([j], 1);
+                    j--;
                 }
-
+            }
+            }
+        } 
+    for (let i = 0; i < boxArray.length; i++) {
+        
+        if (boxArray[i].classList.contains('possible')) {
+            let letter = boxArray[i].value.toLowerCase();
+            for (let j = 0; j < possible.length; j++) {
+                if (contains(possible[j], letter) === false) {
+                    possible.splice([j], 1);
+                    j--;
+                }
             }
         }
-    } 
-    console.log(possible)
+    } console.log(possible);
 
-});
+    let resultDiv = document.getElementById('possible');
+    textNode = document.createTextNode(possible);
+    resultDiv.appendChild(textNode);
+    } 
+    );
 
 
 
@@ -60,12 +77,10 @@ function contains(word, letter) {
     for (let i = 0; i < word.length; i++) {
         if (letter === word[i]) {
             return true;
-        } else {
-            return false;
+        } 
         }
-        
-    }
-}
+        return false;
+    } 
 
 
 

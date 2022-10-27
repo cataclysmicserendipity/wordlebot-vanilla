@@ -1,3 +1,6 @@
+//const words = ['apple', 'banks', 'cocks', 'dongs', 'every', 'bears', 'catts', 'penis']
+
+
 const words = [
   "aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "aback", "abacs", "abaft", "abaka",
   "abamp", "aband", "abase", "abash", "abask", "abate", "abaya", "abbas", "abbed", "abbes",
