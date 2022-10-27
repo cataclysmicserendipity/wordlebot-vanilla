@@ -16,7 +16,7 @@ const boxes = document.getElementsByClassName('box')
       })
   }
 
-const possible = [];
+let possible = [];
 
 document.getElementById('go').addEventListener('click', (e) => {
     e.preventDefault()
@@ -29,14 +29,11 @@ document.getElementById('go').addEventListener('click', (e) => {
 
     let boxArray = [box1, box2, box3, box4, box5];
 
+    possible = words;
+
     for (let i = 0; i < boxArray.length; i++) {
-        if (boxArray[i].classList.contains('valid') && possible.length === 0) {
-            for (let j = 0; j < words.length; j++) {
-                if (words[j][i] === boxArray[i].value) {
-                    possible.push(words[j]);
-                }
-            }
-        } else if (boxArray[i].classList.contains('valid') && possible.length > 0) {
+       
+        if (boxArray[i].classList.contains('valid')) {
             for (let j = 0; j < possible.length; j++) {
                 if (possible[j][i] !== boxArray[i].value) {
                     possible.splice(j,1);
@@ -45,14 +42,8 @@ document.getElementById('go').addEventListener('click', (e) => {
         } 
     }
     for (let i = 0; i < boxArray.length; i++) {
-        if (boxArray[i].classList.contains('invalid') && possible.length === 0) {
-            for (let j = 0; j < words.length; j++) {
-                if (contains(words[j], boxArray[i].value) === false) {
-                    possible.push(words[j]);
-                } 
-                }
-
-            } else if (boxArray[i].classList.contains('invalid') && possible.length > 0) {
+       
+        if (boxArray[i].classList.contains('invalid') && possible.length > 0) {
             for (let j = 0; j < possible.length; j++) {
                 if (contains(possible[j], boxArray[i].value)) {
                     possible.splice([j],1);
