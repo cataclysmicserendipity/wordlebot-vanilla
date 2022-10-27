@@ -1,0 +1,18 @@
+h1 {
+    color:blue;
+}
+.box {
+    width: 1em;
+}
+.invalid {
+    background-color: whitesmoke;
+}
+.valid {
+    background-color: green;
+}
+.possible {
+    background-color: yellow;
+}
+.row {
+    margin: 1em;
+}
