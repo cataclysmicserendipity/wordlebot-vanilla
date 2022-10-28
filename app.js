@@ -16,6 +16,22 @@ const boxes = document.getElementsByClassName('box')
       })
   }
 
+document.getElementById('rowbutton').addEventListener('click', (e) => {
+    e.preventDefault();
+    let rows = document.getElementById('rows');
+    let row = document.createElement('div');
+    row.className = 'row';
+    for (let i = 0; i < 5; i++) {
+        let box = document.createElement('input');
+        box.className = 'box invalid';
+        box.type = 'text';
+        row.appendChild(box);
+    }
+
+    rows.appendChild(row)
+
+})
+
 let possible = [];
 
 document.getElementById('go').addEventListener('click', (e) => {
