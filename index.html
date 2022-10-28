@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>wordlebot vanilla</title>
-        <link rel ='stylesheet' href = 'app.css' />
-    </head>
-    <body>
-        <h1>Wordlebot</h1>
-        <form autocomplete = 'off'>
-            <div id = row1 class = row>
-            <input type = text id = box1 class = 'box invalid' />
-            <input type = text id = box2 class = 'box invalid' />
-            <input type = text id = box3 class = 'box invalid' />
-            <input type = text id = box4 class = 'box invalid' />
-            <input type = text id = box5 class = 'box invalid' />
-            </div>
-            <div id = rows ></div>
+  <head>
+    <title>wordlebot vanilla</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <h1>Wordlebot</h1>
+    <form autocomplete="off">
+      <div id="row1" class="row">
+        <input type="text" id="box1" class="box invalid" />
+        <input type="text" id="box2" class="box invalid" />
+        <input type="text" id="box3" class="box invalid" />
+        <input type="text" id="box4" class="box invalid" />
+        <input type="text" id="box5" class="box invalid" />
+      </div>
+      <div id="rows"></div>
 
-            <button id = rowbutton >new row</button>
+      <button id="rowbutton">new row</button>
 
-            <button id = go>Go</button>
+      <button id="go">Go</button>
+    </form>
+    <div>
+      <h2>Possible words</h2>
+      <div id="possible"></div>
+    </div>
 
-        </form>
-        <div>
-            <h2>Possible words</h2>
-            <div id = possible ></div>
-        </div>
-
-        <script src = 'words.js' ></script>
-        <script src = 'app.js' ></script>
-    </body>
+    <script src="words.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
