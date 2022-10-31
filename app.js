@@ -1,20 +1,17 @@
-const boxes = document.getElementsByClassName("box");
-for (let i = 0; i < boxes.length; i++) {
-  boxes[i].addEventListener("click", (e) => {
-    console.log(e);
-    const box = e.target;
-    if (box.classList.contains("invalid")) {
-      box.classList.remove("invalid");
-      box.classList.add("valid");
-    } else if (box.classList.contains("valid")) {
-      box.classList.remove("valid");
-      box.classList.add("possible");
-    } else if (box.classList.contains("possible")) {
-      box.classList.remove("possible");
-      box.classList.add("invalid");
-    }
-  });
-}
+document.getElementById("rows").addEventListener("click", (e) => {
+  console.log(e);
+  const box = e.target;
+  if (box.classList.contains("invalid")) {
+    box.classList.remove("invalid");
+    box.classList.add("valid");
+  } else if (box.classList.contains("valid")) {
+    box.classList.remove("valid");
+    box.classList.add("possible");
+  } else if (box.classList.contains("possible")) {
+    box.classList.remove("possible");
+    box.classList.add("invalid");
+  }
+});
 
 document.getElementById("rowbutton").addEventListener("click", (e) => {
   e.preventDefault();
